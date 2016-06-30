@@ -2547,6 +2547,13 @@ ConformanceChecker::inferTypeWitnessesViaValueWitnesses(
   const llvm::SetVector<AssociatedTypeDecl *> &assocTypes)
 {
   InferredAssociatedTypes result;
+
+  // If inference of type witnesses for associated types is disabled,
+  // there's nothing to do.
+  auto &ctx = Conformance->getProtocol()->getASTContext();
+  if (!ctx.LangOpts.EnableAssociatedTypeWitnessInference)
+    return result;
+
   for (auto member : Proto->getMembers()) {
     auto req = dyn_cast<ValueDecl>(member);
     if (!req)

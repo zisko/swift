@@ -743,6 +743,9 @@ static bool ParseLangArgs(LangOptions &Opts, ArgList &Args,
   Opts.EnableExperimentalNestedGenericTypes |=
     Args.hasArg(OPT_enable_experimental_nested_generic_types);
 
+  if (Args.hasArg(OPT_disable_associated_type_witness_inference))
+    Opts.EnableAssociatedTypeWitnessInference = false;
+
   Opts.DisableAvailabilityChecking |=
       Args.hasArg(OPT_disable_availability_checking);
   

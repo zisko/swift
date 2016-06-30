@@ -143,6 +143,9 @@ namespace swift {
     /// \brief Enable experimental nested generic types feature.
     bool EnableExperimentalNestedGenericTypes = false;
 
+    /// \brief Enable inference of associated type witnesses.
+    bool EnableAssociatedTypeWitnessInference = true;
+
     /// Should we check the target OSs of serialized modules to see that they're
     /// new enough?
     bool EnableTargetOSChecking = true;

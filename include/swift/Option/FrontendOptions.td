@@ -227,6 +227,10 @@ def enable_experimental_nested_generic_types :
   Flag<["-"], "enable-experimental-nested-generic-types">,
   HelpText<"Enable experimental support for nested generic types">;
 
+def disable_associated_type_witness_inference :
+  Flag<["-"], "disable-associated-type-witness-inference">,
+  HelpText<"Disable inference of associated type witnesses (SE-0108)">;
+
 def disable_availability_checking : Flag<["-"],
   "disable-availability-checking">,
   HelpText<"Disable checking for potentially unavailable APIs">;
